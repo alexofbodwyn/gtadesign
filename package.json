@@ -2,6 +2,9 @@
   "name": "gtadesign",
   "version": "0.1.0",
   "private": true,
+  "files": [
+    "resources/**/*"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "rm -rf .next && next build",
