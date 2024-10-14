@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import caseStudy from "@/resources/caseStudy.json"
+import caseStudy from "../resources/caseStudy.json"
 
 export default function Home() {
   return (
