@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import caseStudy from "@/content/case-study.json"
 
 type CaseStudyPageProps = {
