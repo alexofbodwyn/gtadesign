@@ -3,18 +3,18 @@
     "title": "this is the title for case study 1",
     "body": "this is the body",
     "url": "case-study-1",
-    "image": "/assets/images/img1.png"
+    "image": "/assets/images/ga1.jpg"
   },
   {
     "title": "this is the title for case study 2",
     "body": "this is the body",
     "url": "case-study-2",
-    "image": "/assets/images/img1.png"
+    "image": "/assets/images/ga1.jpg"
   },
   {
     "title": "this is the title for case study 3",
     "body": "this is the body",
     "url": "case-study-3",
-    "image": "/assets/images/img1.png"
+    "image": "/assets/images/ga1.jpg"
   }
 ]

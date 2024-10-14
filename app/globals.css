@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -16,14 +18,16 @@
 
 body {
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "PT Sans", sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
   background-color: #f8fafc;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23cbd5e1' fill-opacity='0.73' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%2334155' fill-opacity='0.3' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E"); */
 }
 
 main {
   background: rgb(248, 250, 252);
-  background: linear-gradient(90deg, rgba(248, 250, 252, 1) 10%, rgba(0, 0, 0, 0) 50%, rgba(248, 250, 252, 1) 90%);
+  background: linear-gradient(100deg, rgba(248, 250, 252, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(248, 250, 252, 1) 90%);
   min-height: calc(100vh - 70px);
 }
 
