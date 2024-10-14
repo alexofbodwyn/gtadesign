@@ -1,5 +1,5 @@
 import Image from "next/image";
-import caseStudy from "@/resources/case-study.json"
+import caseStudy from "@resources/case-study.json"
 
 type CaseStudyPageProps = {
   params: { slug: string }
