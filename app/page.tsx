@@ -16,7 +16,7 @@ export default function Home() {
         <Image alt="GTA Designs" src={homePageContent.heroImage} width={1744} height={800} className="rounded-lg border border-slate-200" />
       </div>
       <div className="bg-slate-700 my-12 p-12 w-full flex flex-col items-center text-center">
-        <div className="max-w-[800px]">
+        <div className="max-w-[800px] pt-4">
           <h2 className="text-3xl text-slate-200 px-24">{homePageContent.panelTitle}</h2>
           <p className="text-slate-200 mt-10 px-24">{homePageContent.panelText}</p>
 
@@ -33,14 +33,17 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex w-full justify-center pt-10 gap-4">
-        {caseStudy.map((study, index) => (
-          <Link href={`case-studies/${study.url}`} key={`caseStudy-map-${index}`} className="border border-slate-300 drop-shadow-sm bg-gradient-to-br from-white to-slate-50 p-4 rounded">
-            <Image alt={study.title} src={study.image} width={300} height={300} className="rounded" />
-            <h3 className="mt-4 text-lg text-slate-700">{study.title}</h3>
-            <p className="text-slate-500">{study.body}</p>
-          </Link>
-        ))}
+      <div className="flex flex-col w-full justify-center items-center pt-4 gap-4">
+        <h2 className="text-3xl text-slate-700 px-24">{homePageContent.panelTitle}</h2>
+        <div className="flex w-full justify-center pt-10 gap-4">
+          {caseStudy.map((study, index) => (
+            <Link href={`case-studies/${study.url}`} key={`caseStudy-map-${index}`} className="border border-slate-300 drop-shadow-sm bg-gradient-to-br from-white to-slate-50 p-4 rounded">
+              <Image alt={study.title} src={study.image} width={300} height={300} className="rounded" />
+              <h3 className="mt-4 text-lg text-slate-700">{study.title}</h3>
+              <p className="text-slate-500">{study.body}</p>
+            </Link>
+          ))}
+        </div>
       </div>
     </main >
   );
