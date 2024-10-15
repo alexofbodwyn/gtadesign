@@ -23,7 +23,6 @@ export default function Home() {
           <div className="flex gap-4 mt-10 text-left">
             {homePageContent.infoBox.map((box, index) => (
               <div key={`infoBox-map-${index}`} className="flex flex-col border border-slate-600 p-4 bg-gradient-to-br from-slate-600 to-slate-700 rounded-lg w-1/3 drop-shadow h-32">
-                <div className="icon-chart-no-axes-combined"></div>
                 <div className="flex items-center">
                   <Icon name={box.icon as IconProps["name"]} color="#bbf7d0" className="w-8 h-8" />
                   <h3 className="text-2xl text-green-200 font-bold ml-2">{box.tite}</h3>
@@ -34,14 +33,13 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex w-full justify-center pt-[50px]">
+      <div className="flex w-full justify-center pt-10 gap-4">
         {caseStudy.map((study, index) => (
-          <div key={`caseStudy-map-${index}`}>
-            <h3>{study.title}</h3>
-            <p>{study.body}</p>
-            <Image alt={study.title} src={study.image} width={300} height={300} />
-            <Link href={`case-studies/${study.url}`}>Link</Link>
-          </div>
+          <Link href={`case-studies/${study.url}`} key={`caseStudy-map-${index}`} className="border border-slate-300 drop-shadow-sm bg-gradient-to-br from-white to-slate-50 p-4 rounded">
+            <Image alt={study.title} src={study.image} width={300} height={300} className="rounded" />
+            <h3 className="mt-4 text-lg text-slate-700">{study.title}</h3>
+            <p className="text-slate-500">{study.body}</p>
+          </Link>
         ))}
       </div>
     </main >
