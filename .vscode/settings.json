@@ -1,0 +1,4 @@
+{
+  "biome.lsp.trace.server": "verbose",
+  "biome.lsp.bin": "./node_modules/@biomejs/cli-darwin-arm64/biome"
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "includes": ["**", "!tdlib-types.d.ts", "!vercel.json", "!db/supabase.types.ts", "!app/client/**/*.gen.ts"]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "lineWidth": 120
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      // "nursery": {
+      //   "noNestedTernary": "warn" removed this rule as it's not supported
+      // },
+      "recommended": true,
+      "suspicious": {
+        "noGlobalIsNan": "off",
+        // re-enable these?
+        "noArrayIndexKey": "off",
+        "noExplicitAny": "warn",
+        "noImplicitAnyLet": "warn",
+        "noShadowRestrictedNames": "info",
+        "useAwait": "error"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "info"
+      },
+      "complexity": {
+        // increase to error?
+        "noForEach": "warn"
+      },
+      "a11y": {
+        // increase to warn/error
+        "useKeyWithClickEvents": "info",
+        "useHtmlLang": "info",
+        "useButtonType": "off",
+        "noSvgWithoutTitle": "info",
+        "noRedundantAlt": "info",
+        "useIframeTitle": "info",
+        "useKeyWithMouseEvents": "info",
+        "noAutofocus": "off"
+      },
+      "style": {
+        "useFragmentSyntax": "error",
+        // increase to warn/error
+        "noNonNullAssertion": {
+          "level": "info",
+          "fix": "none"
+        }
+      },
+      "correctness": {
+        "useHookAtTopLevel": "error",
+        "noUnusedImports": "error",
+        "noUnusedVariables": "error",
+        // increase to warn/error
+        "useExhaustiveDependencies": "info"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "semicolons": "asNeeded"
+    }
+  }
+}
