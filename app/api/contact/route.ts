@@ -9,8 +9,6 @@ export async function POST(request: NextRequest) {
   try {
     const { name, email, message } = await request.json()
 
-    console.log('Attempting to send email:', { name, email })
-
     const data = await resend.emails.send({
       from: 'Contact Form <noreply@gtadesign.com>',
       to: 'alexefthymiou@gmail.com',
@@ -23,8 +21,6 @@ export async function POST(request: NextRequest) {
         <p>${message}</p>
       `,
     })
-
-    console.log('Email sent successfully:', data)
     return NextResponse.json({ success: true, data })
   } catch (error) {
     console.error('Email send error:', error)

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="border-t border-t-zinc-300 flex flex-col items-center w-full p-8">
@@ -8,6 +10,7 @@ export default function Footer() {
         <p className="max-w-[650px] mx-auto text-zinc-400">
           Proud member of our local Chamber of Commerce, serving SMEs in our community.
         </p>
+        <p className="mt-6"><Link className="underline text-zinc-400" href="/privacy-policy">Privacy Policy</Link></p>
       </div>
     </footer>
   )

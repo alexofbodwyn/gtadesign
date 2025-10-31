@@ -17,7 +17,7 @@ export default function Home() {
     <>
       <Hero />
       <FeatureList />
-      <div className="bg-zinc-50 w-full mt-10">
+      <div className="bg-zinc-50 w-full mt-10 px-4">
         <div className="p-8 max-w-site w-full flex flex-col gap-8 m-auto">
           <div className="flex flex-col justify-center text-center items-center">
             <h2 className="text-3xl text-zinc-700">Everything You Need, All in One Place</h2>
@@ -27,7 +27,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 flex-wrap">
+          <div className="min-lg:grid grid-cols-2 gap-4 flex-wrap">
             <Card>
               <div className="rounded-md bg-zinc-700 p-2 size-10 flex items-center justify-center">
                 <FingerPrintIcon className="size-6 stroke-white" />
@@ -43,7 +43,7 @@ export default function Home() {
                 ))}
               </div>
             </Card>
-            <Card>
+            <Card className='mt-4 min-lg:mt-0'>
               <div className="rounded-md bg-zinc-700 p-2 size-10 flex items-center justify-center">
                 <DocumentTextIcon className="size-8 stroke-white" />
               </div>
@@ -58,7 +58,7 @@ export default function Home() {
                 ))}
               </div>
             </Card>
-            <Card>
+            <Card className='mt-4 min-lg:mt-0'>
               <div className="rounded-md bg-zinc-700 p-2 size-10 flex items-center justify-center">
                 <GlobeAltIcon className="size-8 stroke-white" />
               </div>
@@ -73,7 +73,7 @@ export default function Home() {
                 ))}
               </div>
             </Card>
-            <Card>
+            <Card className='mt-4 min-lg:mt-0'>
               <div className="rounded-md bg-zinc-700 p-2 size-10 flex items-center justify-center">
                 <CursorArrowRaysIcon className="size-8 stroke-white" />
               </div>

@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 
 export default function Hero() {
   return (
-    <div className="max-w-site w-full mx-auto border-b border-zinc-300 pb-8">
+    <div className="max-w-site w-full mx-auto border-b border-zinc-300 pb-8 px-4">
       <Badge>Your Local Brand Partner</Badge>
       <h1 className="text-4xl text-zinc-700 mt-6">Not sure where to start with your brand? Let me help.</h1>
       <p className="max-w-[650px] mt-8 text-lg text-zinc-500">
