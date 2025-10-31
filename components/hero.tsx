@@ -15,7 +15,7 @@ export default function Hero() {
       </p>
       <div className="flex mt-8 gap-4">
         <Button asChild>
-          <Link href="/">
+          <Link href="/get-in-touch">
             Lets Talk About Your Project <ArrowRightIcon />
           </Link>
         </Button>
