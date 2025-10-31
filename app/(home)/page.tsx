@@ -14,7 +14,7 @@ const uxBadges = ['User Experience', 'Customer Journeys', 'Interface Design', 'U
 
 export default function Home() {
   return (
-    <main className="flex flex-col w-full justify-center items-center pt-14 mt-16">
+    <>
       <Hero />
       <FeatureList />
       <div className="bg-zinc-50 w-full mt-10">
@@ -91,6 +91,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </main>
+    </>
   )
 }
