@@ -7,18 +7,25 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, message } = await request.json()
+    const { firstName, lastName, email, phoneNumber, businessName, interestedIn, projectDetails, timeline } =
+      await request.json()
 
     const data = await resend.emails.send({
       from: 'Contact Form <noreply@gtadesign.com>',
-      to: 'alexefthymiou@gmail.com',
+      to: 'airey.giles@gmail.com',
+      cc: 'alexefthymiou@gmail.com',
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Name:</strong> ${firstName} ${lastName}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
+        <p><strong>Phone number:</strong> ${phoneNumber}</p>
+        <p><strong>Business Name:</strong> ${businessName}</p>
+        <p><strong>Interested In:</strong> ${interestedIn}</p>
+        <p><strong>Project Details:</strong> ${projectDetails}</p>
+        <p><strong>Timeline:</strong> ${timeline}</p>
+        <p><strong>Project Details:</strong></p>
+        <p>${projectDetails}</p>
       `,
     })
     return NextResponse.json({ success: true, data })
