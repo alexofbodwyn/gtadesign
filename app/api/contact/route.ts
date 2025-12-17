@@ -22,7 +22,6 @@ export async function POST(request: NextRequest) {
         <p><strong>Phone number:</strong> ${phoneNumber}</p>
         <p><strong>Business Name:</strong> ${businessName}</p>
         <p><strong>Interested In:</strong> ${interestedIn}</p>
-        <p><strong>Project Details:</strong> ${projectDetails}</p>
         <p><strong>Timeline:</strong> ${timeline}</p>
         <p><strong>Project Details:</strong></p>
         <p>${projectDetails}</p>
