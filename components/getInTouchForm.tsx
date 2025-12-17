@@ -1,53 +1,40 @@
-"use client"
+'use client'
 
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
-import { useState } from "react"
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
 
-import { Button } from "@/components/ui/button"
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Button } from '@/components/ui/button'
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Textarea } from '@/components/ui/textarea'
 
 const formSchema = z.object({
   firstName: z.string().min(2, {
-    message: "First name must be at least 2 characters.",
+    message: 'First name must be at least 2 characters.',
   }),
   lastName: z.string().min(2, {
-    message: "Last name must be at least 2 characters.",
+    message: 'Last name must be at least 2 characters.',
   }),
   email: z.email({
-    message: "Please enter a valid email address.",
+    message: 'Please enter a valid email address.',
   }),
   phoneNumber: z.string().optional(),
   businessName: z.string().optional(),
   interestedIn: z.enum([
-    "brand-logo-design",
-    "print-design",
-    "web-design",
-    "ux-user-experience",
-    "multiple-services",
-    "not-sure-yet"
+    'brand-logo-design',
+    'print-design',
+    'web-design',
+    'ux-user-experience',
+    'multiple-services',
+    'not-sure-yet',
   ]),
   projectDetails: z.string().min(10, {
-    message: "Please tell us about your project (at least 10 characters).",
+    message: 'Please tell us about your project (at least 10 characters).',
   }),
-  timeline: z.enum([
-    "urgent-asap",
-    "within-next-month",
-    "next-2-3-months",
-    "just-planning-ahead"
-  ]),
+  timeline: z.enum(['urgent-asap', 'within-next-month', 'next-2-3-months', 'just-planning-ahead']),
 })
 
 export default function GetInTouchForm() {
@@ -56,35 +43,35 @@ export default function GetInTouchForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      phoneNumber: "",
-      businessName: "",
-      interestedIn: "ux-user-experience",
-      projectDetails: "",
-      timeline: "within-next-month"
+      firstName: '',
+      lastName: '',
+      email: '',
+      phoneNumber: '',
+      businessName: '',
+      interestedIn: 'ux-user-experience',
+      projectDetails: '',
+      timeline: 'within-next-month',
     },
   })
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    setStatus('sending');
+    setStatus('sending')
 
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(values)
-      });
+        body: JSON.stringify(values),
+      })
 
       if (response.ok) {
-        setStatus('success');
-        form.reset();
+        setStatus('success')
+        form.reset()
       } else {
-        setStatus('error');
+        setStatus('error')
       }
     } catch (_error) {
-      setStatus('error');
+      setStatus('error')
     }
   }
 
@@ -133,9 +120,7 @@ export default function GetInTouchForm() {
               <FormControl>
                 <Input type="email" placeholder="john@example.com" {...field} />
               </FormControl>
-              <FormDescription>
-                We'll never share your email.
-              </FormDescription>
+              <FormDescription>We'll never share your email.</FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -190,9 +175,7 @@ export default function GetInTouchForm() {
                   <SelectItem value="not-sure-yet">Not Sure Yet</SelectItem>
                 </SelectContent>
               </Select>
-              <FormDescription>
-                Choose the service you're most interested in.
-              </FormDescription>
+              <FormDescription>Choose the service you're most interested in.</FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -211,9 +194,7 @@ export default function GetInTouchForm() {
                   {...field}
                 />
               </FormControl>
-              <FormDescription>
-                Please provide as much detail as possible about your project.
-              </FormDescription>
+              <FormDescription>Please provide as much detail as possible about your project.</FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -238,9 +219,7 @@ export default function GetInTouchForm() {
                   <SelectItem value="just-planning-ahead">Just planning ahead</SelectItem>
                 </SelectContent>
               </Select>
-              <FormDescription>
-                When do you need this project completed?
-              </FormDescription>
+              <FormDescription>When do you need this project completed?</FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -253,9 +232,7 @@ export default function GetInTouchForm() {
         )}
 
         {status === 'error' && (
-          <div className="text-sm text-red-600 bg-red-50 p-3 rounded">
-            ✗ Failed to send message. Please try again.
-          </div>
+          <div className="text-sm text-red-600 bg-red-50 p-3 rounded">✗ Failed to send message. Please try again.</div>
         )}
 
         <Button className="cursor-pointer p-6" type="submit" disabled={status === 'sending'}>
