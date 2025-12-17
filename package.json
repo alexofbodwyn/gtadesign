@@ -12,7 +12,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "rm -rf .next && npm i && payload generate:importmap && NODE_ENV=production next build",
+    "build": "rm -rf .next && payload generate:importmap && NODE_ENV=production next build",
     "start": "next start",
     "format": "biome format --write .",
     "lint": "biome lint .",
