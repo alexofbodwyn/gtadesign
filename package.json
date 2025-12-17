@@ -13,6 +13,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "rm -rf .next && payload generate:importmap && NODE_ENV=production next build",
+    "do-build": "npm install --legacy-peer-deps && npm run build",
     "start": "next start",
     "format": "biome format --write .",
     "lint": "biome lint .",
