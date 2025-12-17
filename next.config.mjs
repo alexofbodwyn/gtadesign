@@ -1,18 +1,29 @@
-import { withPayload } from "@payloadcms/next/withPayload";
+import { withPayload } from '@payloadcms/next/withPayload'
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  redirects() {
-    return [
+  images: {
+    remotePatterns: [
       {
-        source: '/:path*',
-        destination: 'https://www.krop.com/giles_airey/#/',
-        permanent: false,
+        protocol: 'https',
+        hostname: 'prmivtkwlbkjvveyrmrs.supabase.co',
+        port: '',
+        pathname: '/storage/v1/object/public/**',
       },
-    ]
+    ],
   },
+  // redirects() {
+  //   return [
+  //     {
+  //       source: '/:path*',
+  //       destination: 'https://www.krop.com/giles_airey/#/',
+  //       permanent: false,
+  //     },
+  //   ]
+  // },
 }
 
 export default withPayload(nextConfig)

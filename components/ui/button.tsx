@@ -5,14 +5,14 @@ import * as React from 'react'
 import { cn } from '@/lib/utils'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
+  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow-none duration-200 cursor-pointer ',
   {
     variants: {
       variant: {
-        default: 'bg-zinc-900 text-white hover:bg-zinc-700',
+        default: 'bg-brand-blue-700 text-white hover:bg-brand-blue-300 hover:shadow-md hover:shadow-gray-300',
         destructive: 'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90',
-        outline: 'border border-zinc-300 bg-background hover:bg-accent hover:bg-zinc-50',
-        secondary: 'bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80',
+        outline: 'border border-white bg-background hover:bg-accent hover:bg-white/10',
+        secondary: 'border border-brand-grey-300 bg-brand-grey-50 text-primary-foreground hover:bg-white',
         ghost: 'hover:bg-zinc-100 hover:text-accent-foreground',
         link: 'text-primary underline-offset-4 hover:underline',
       },
@@ -32,7 +32,7 @@ const buttonVariants = cva(
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-  VariantProps<typeof buttonVariants> {
+    VariantProps<typeof buttonVariants> {
   asChild?: boolean
 }
 

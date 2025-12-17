@@ -1,5 +1,6 @@
 :root {
-  --font-mono: 'Roboto Mono', monospace;
+  --font-mono: "Roboto Mono", monospace;
+  --font-montserrat: "Montserrat", arial;
 }
 
 * {

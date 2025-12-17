@@ -2,14 +2,56 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.6;
   font-size: 16px;
 }
 
 @theme {
   --max-width-site: 1200px;
+  /* Brand Blue */
+  --color-brand-blue-50: #f5f7fa;
+  --color-brand-blue-100: #717182;
+  --color-brand-blue-200: #7084a5;
+  --color-brand-blue-300: #5a6e8e;
+  --color-brand-blue-400: #4d5f7a;
+  --color-brand-blue-500: #475569;
+  --color-brand-blue-600: #404a5c;
+  --color-brand-blue-700: #404a5c;
+  --color-brand-blue-800: #2d3440;
+  --color-brand-blue-900: #1f2530;
+  --color-brand-blue-950: #141821;
+
+  /* Brand Green */
+  --color-brand-green-50: #f4fbf0;
+  --color-brand-green-100: #e6f7df;
+  --color-brand-green-200: #ceefc0;
+  --color-brand-green-300: #b0e599;
+  --color-brand-green-400: #8cdd6e;
+  --color-brand-green-500: #6fce4d;
+  --color-brand-green-600: #56b038;
+  --color-brand-green-700: #458d2e;
+  --color-brand-green-800: #397129;
+  --color-brand-green-900: #2f5e25;
+  --color-brand-green-950: #173411;
+
+  /* Brand Grey */
+  --color-brand-grey-50: #eceef2;
+  --color-brand-grey-100: #e1e4e9;
+  --color-brand-grey-200: #c3c8d1;
+  --color-brand-grey-300: #a5abb8;
+  --color-brand-grey-400: #878fa0;
+  --color-brand-grey-500: #697288;
+  --color-brand-grey-600: #545b6d;
+  --color-brand-grey-700: #3f4452;
+  --color-brand-grey-800: #2a2e36;
+  --color-brand-grey-900: #15171b;
+  --color-brand-grey-950: #0a0b0d;
 }
 
 @layer utilities {
