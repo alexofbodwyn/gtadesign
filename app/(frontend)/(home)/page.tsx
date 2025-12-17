@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import {
   AcademicCapIcon,
   CursorArrowRaysIcon,
@@ -149,7 +151,7 @@ export default function Home() {
           <div className="min-lg:grid grid-cols-2 gap-8 flex-wrap mt-8">
             <div className="flex flex-col">
               <Image
-                src="https://prmivtkwlbkjvveyrmrs.supabase.co/storage/v1/object/public/gtadesign-bucket/site/mentor.png"
+                src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/site/mentor.png`}
                 alt="Mentorship"
                 width={500}
                 height={500}
