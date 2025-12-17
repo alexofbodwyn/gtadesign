@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import config from '@payload-config'
 import { RichText } from '@payloadcms/richtext-lexical/react'
 import Image from 'next/image'
