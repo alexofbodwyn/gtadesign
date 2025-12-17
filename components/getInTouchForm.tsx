@@ -11,6 +11,11 @@ import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
 
+import {
+  CheckCircleIcon,
+  ExclamationCircleIcon
+} from '@heroicons/react/24/outline'
+
 const formSchema = z.object({
   firstName: z.string().min(2, {
     message: 'First name must be at least 2 characters.',
@@ -226,18 +231,23 @@ export default function GetInTouchForm() {
         />
 
         {status === 'success' && (
-          <div className="text-sm text-green-600 bg-green-50 p-3 rounded">
-            ✓ Message sent successfully! We'll get back to you soon.
+          <div className="text-sm text-green-600 bg-green-50 p-3 rounded inline-flex items-center gap-x-4">
+            <CheckCircleIcon className='size-6' /> <span>Message sent successfully! We'll get back to you soon.</span>
           </div>
         )}
 
+
         {status === 'error' && (
-          <div className="text-sm text-red-600 bg-red-50 p-3 rounded">✗ Failed to send message. Please try again.</div>
+          <div className="text-sm text-red-600 bg-red-50 p-3 rounded inline-flex items-center gap-x-4">
+            <ExclamationCircleIcon className='size-6' /><span>Failed to send message. Please try again.</span>
+          </div>
         )}
 
-        <Button className="cursor-pointer p-6" type="submit" disabled={status === 'sending'}>
-          {status === 'sending' ? 'Sending...' : 'Send Message'}
-        </Button>
+        <div>
+          <Button className="cursor-pointer p-6" type="submit" disabled={status === 'sending'}>
+            {status === 'sending' ? 'Sending...' : 'Send Message'}
+          </Button>
+        </div>
 
         <p className="text-zinc-500">By submitting this form, you agree to me contacting you about your enquiry.</p>
       </form>

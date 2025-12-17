@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
       from: 'Contact Form <noreply@gtadesign.com>',
       to: 'airey.giles@gmail.com',
       cc: 'alexefthymiou@gmail.com',
-      subject: `New Contact Form Submission from ${name}`,
+      subject: `New Contact Form Submission from ${firstName} ${lastName}`,
       html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${firstName} ${lastName}</p>
