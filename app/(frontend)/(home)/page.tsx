@@ -12,6 +12,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Card from '@/components/card'
 import CaseStudyListing from '@/components/caseStudyListing'
+import ClientBlock from '@/components/clientBlock'
 import FeatureList from '@/components/featureList'
 import { Heading2, Heading3 } from '@/components/headings'
 import Hero from '@/components/hero'
@@ -34,6 +35,9 @@ export default function Home() {
     <>
       <Hero />
       <FeatureList />
+      <ClientBlock />
+      <CaseStudyListing />
+
       {/** biome-ignore lint/correctness/useUniqueElementIds: needed for navigation */}
       <div className="bg-brand-blue-700 w-full mt-8 sm:mt-10 px-4" id="services">
         <div className="p-8 max-w-site w-full flex flex-col gap-8 m-auto">
@@ -88,7 +92,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <CaseStudyListing />
 
       {/** biome-ignore lint/correctness/useUniqueElementIds: needed for navigation */}
       <div className="bg-brand-blue-50 w-full mt-8 sm:mt-10  px-4" id="experience">

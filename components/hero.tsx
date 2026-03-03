@@ -5,29 +5,28 @@ import { Button } from '@/components/ui/button'
 
 export default function Hero() {
   return (
-    <div className="max-w-site w-full mx-auto border-b border-zinc-300 pb-8 px-4">
-      <div className="flex mt-8 gap-4">
-        <Button asChild>
-          <Link href="/get-in-touch">
-            Lets Talk About Your Project <ArrowRightIcon className="text-brand-green-400" />
-          </Link>
-        </Button>
-        <Button asChild variant="outline">
-          <Link href="/">See How I Can Help</Link>
-        </Button>
+    <div className="bg-[#051317] w-full">
+      <div className="bg-radial-[at_25%_65%]  from-[#066d8a] to-100% pt-24">
+        <div className="max-w-site w-full mx-auto pb-10 px-4">
+          <Heading1 className="text-white">
+            Strategic UX, Brand & Website Design for
+            <br />
+            Growing Businesses
+          </Heading1>
+          <p className="max-w-[780px] text-lg text-white mt-8">
+            Helping SMEs and organisations modernise their
+            <br />
+            brand, marketing, website & digital experience
+          </p>
+          <div className="mt-8">
+            <Button asChild className="bg-brand-green-400 text-brand-blue-600 text-lg">
+              <Link href="/get-in-touch">
+                Book a Consultation <ArrowRightIcon className="text-brand-blue-600" />
+              </Link>
+            </Button>
+          </div>
+        </div>
       </div>
-      <Heading1>
-        Not sure where to start with your brand?
-        <br />
-        <strong className="font-semibold">Let me help.</strong>
-      </Heading1>
-      <p className="max-w-[780px] mt-8 text-lg text-brand-blue-100">
-        With 25 years of global design experience, I specialise in helping local SMEs bring their brand vision to life.
-        <strong className="font-semibold">
-          From your first logo to a complete digital presence - everything you need, all in one place for Brand, Print,
-          Web, and UX design.
-        </strong>
-      </p>
     </div>
   )
 }

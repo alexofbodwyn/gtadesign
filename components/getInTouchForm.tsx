@@ -1,20 +1,15 @@
 'use client'
 
+import { CheckCircleIcon, ExclamationCircleIcon } from '@heroicons/react/24/outline'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-
 import { Button } from '@/components/ui/button'
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
-
-import {
-  CheckCircleIcon,
-  ExclamationCircleIcon
-} from '@heroicons/react/24/outline'
 
 const formSchema = z.object({
   firstName: z.string().min(2, {
@@ -232,14 +227,14 @@ export default function GetInTouchForm() {
 
         {status === 'success' && (
           <div className="text-sm text-green-600 bg-green-50 p-3 rounded inline-flex items-center gap-x-4">
-            <CheckCircleIcon className='size-6' /> <span>Message sent successfully! We'll get back to you soon.</span>
+            <CheckCircleIcon className="size-6" /> <span>Message sent successfully! We'll get back to you soon.</span>
           </div>
         )}
 
-
         {status === 'error' && (
           <div className="text-sm text-red-600 bg-red-50 p-3 rounded inline-flex items-center gap-x-4">
-            <ExclamationCircleIcon className='size-6' /><span>Failed to send message. Please try again.</span>
+            <ExclamationCircleIcon className="size-6" />
+            <span>Failed to send message. Please try again.</span>
           </div>
         )}
 
