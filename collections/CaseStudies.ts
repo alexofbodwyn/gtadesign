@@ -11,6 +11,18 @@ export const CaseStudies: CollectionConfig = {
   },
   fields: [
     {
+      name: 'logo',
+      type: 'upload',
+      relationTo: 'media',
+      required: false,
+    },
+    {
+      name: 'heroImage',
+      type: 'upload',
+      relationTo: 'media',
+      required: true,
+    },
+    {
       name: 'title',
       type: 'text',
       required: true,
@@ -19,6 +31,23 @@ export const CaseStudies: CollectionConfig = {
       name: 'sub-title',
       type: 'text',
       required: true,
+    },
+    {
+      name: 'badges',
+      type: 'array',
+      required: false,
+      minRows: 1,
+      maxRows: 5,
+      labels: {
+        singular: 'Badge',
+        plural: 'Badges',
+      },
+      fields: [
+        {
+          name: 'title',
+          type: 'text',
+        },
+      ],
     },
     {
       name: 'slug',
@@ -46,15 +75,28 @@ export const CaseStudies: CollectionConfig = {
       name: 'description',
       type: 'richText',
       required: true,
+      label: 'The Challenge',
+    },
+    {
+      name: 'approach',
+      type: 'richText',
+      required: false,
+      label: 'The Approach',
+    },
+    {
+      name: 'outcome',
+      type: 'richText',
+      required: false,
+      label: 'The Outcome',
+    },
+    {
+      name: 'feedback',
+      type: 'richText',
+      required: false,
+      label: 'Client Feedback',
     },
     {
       name: 'thumbnail',
-      type: 'upload',
-      relationTo: 'media',
-      required: true,
-    },
-    {
-      name: 'heroImage',
       type: 'upload',
       relationTo: 'media',
       required: true,

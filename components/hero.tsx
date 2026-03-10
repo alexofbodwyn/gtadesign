@@ -19,7 +19,7 @@ export default function Hero() {
             brand, marketing, website & digital experience
           </p>
           <div className="mt-8">
-            <Button asChild className="bg-brand-green-400 text-brand-blue-600 text-lg">
+            <Button asChild variant="brand">
               <Link href="/get-in-touch">
                 Book a Consultation <ArrowRightIcon className="text-brand-blue-600" />
               </Link>

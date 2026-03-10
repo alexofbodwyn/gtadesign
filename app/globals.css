@@ -52,6 +52,10 @@ body {
   --color-brand-grey-800: #2a2e36;
   --color-brand-grey-900: #15171b;
   --color-brand-grey-950: #0a0b0d;
+
+  /* Brand teal */
+  --color-brand-teal-50: #05566c;
+  --color-brand-teal-100: #05262f;
 }
 
 @layer utilities {

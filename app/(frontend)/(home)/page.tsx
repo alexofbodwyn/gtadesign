@@ -1,22 +1,12 @@
-import {
-  AcademicCapIcon,
-  CursorArrowRaysIcon,
-  DocumentTextIcon,
-  EnvelopeIcon,
-  FingerPrintIcon,
-  GlobeAltIcon,
-  HeartIcon,
-  UsersIcon,
-} from '@heroicons/react/24/outline'
-import Image from 'next/image'
-import Link from 'next/link'
+import { CursorArrowRaysIcon, DocumentTextIcon, FingerPrintIcon, GlobeAltIcon } from '@heroicons/react/24/outline'
 import Card from '@/components/card'
 import CaseStudyListing from '@/components/caseStudyListing'
 import ClientBlock from '@/components/clientBlock'
 import FeatureList from '@/components/featureList'
+import GetInTouch from '@/components/getInTouch'
 import { Heading2, Heading3 } from '@/components/headings'
 import Hero from '@/components/hero'
-import { Badge, Button } from '@/components/ui'
+import { Badge } from '@/components/ui'
 
 const webBadges = [
   'Website Design',
@@ -39,16 +29,16 @@ export default function Home() {
       <CaseStudyListing />
 
       {/** biome-ignore lint/correctness/useUniqueElementIds: needed for navigation */}
-      <div className="bg-brand-blue-700 w-full mt-8 sm:mt-10 px-4" id="services">
+      <div className="bg-white w-full mt-8 sm:mt-10 px-4" id="services">
         <div className="p-8 max-w-site w-full flex flex-col gap-8 m-auto">
-          <div className="flex flex-col justify-center text-center items-center">
-            <Heading2 className="text-brand-green-400">Everything You Need, All in One Place</Heading2>
-            <p className="text-white mt-4 max-w-[720px]">
-              Whether you're just starting out or looking to refresh your brand, I offer a complete range of design
-              services to help your business succeeds
+          <div className="flex flex-col justify-center text-center items-center gap-8">
+            <Heading2 className="text-brand-blue-700">Everything You Need, All in One Place</Heading2>
+            <p className="max-w-[900px] m-auto text-brand-blue-400">
+              <span className="font-semibold block">Looking to take you brand to the next level?</span>
+              We offer a complete end to end range of design services to help your business succeed
             </p>
           </div>
-          <div className="min-lg:grid grid-cols-2 gap-4 flex-wrap">
+          <div className="min-lg:grid grid-cols-2 gap-4 flex-wrap mt-4">
             <Card>
               <div className="rounded-md bg-white p-0 size-10 flex items-center justify-center">
                 <FingerPrintIcon className="size-10 stroke-brand-blue-200" />
@@ -141,7 +131,7 @@ export default function Home() {
       </div>
 
       {/** biome-ignore lint/correctness/useUniqueElementIds: needed for navigation */}
-      <div className="bg-white w-full mt-8 sm:mt-10  px-4" id="mentorship">
+      {/* <div className="bg-white w-full mt-8 sm:mt-10  px-4" id="mentorship">
         <div className="p-8 max-w-site w-full flex flex-col m-auto">
           <Heading2>Giving Back to Our Community</Heading2>
           <p className="text-brand-blue-700">
@@ -202,31 +192,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="bg-white w-full my-10 px-4">
-        <div className="p-8 max-w-site w-full flex flex-col gap-8 m-auto bg-brand-blue-700 rounded-xl">
-          <div className="flex flex-col justify-center text-center items-center">
-            <Heading2 className="text-white">Ready to Grow Your Business?</Heading2>
-            <p className="text-white mt-4 max-w-[720px]">
-              Whether you're just starting out or looking to refresh your brand, let's have a chat about how I can help.
-              No obligation, no jargon - just practical advice.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 mt-8">
-              <Button variant="secondary" asChild>
-                <Link href="/get-in-touch">
-                  <EnvelopeIcon />
-                  Get in Touch
-                </Link>
-              </Button>
-
-              <Button variant="outline" className="text-white">
-                <Link href="/get-in-touch">Book a Free Book a Free Consultation</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <GetInTouch />
     </>
   )
 }
