@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import type { CaseStudy, Media } from '@/payload-types'
 import { Heading4 } from './headings'
 import { Badge } from './ui'
@@ -10,7 +11,7 @@ export default function CaseStudyGrid({ caseStudies }: { caseStudies: CaseStudy[
         const thumbnail = caseStudy.thumbnail as Media | undefined
 
         return (
-          <div key={caseStudy.id} className="group">
+          <Link key={caseStudy.id} href={`/case-studies/${caseStudy.slug}`} className="group">
             <div className="overflow-hidden">
               {thumbnail?.url ? (
                 <div className="relative aspect-square overflow-hidden">
@@ -39,7 +40,7 @@ export default function CaseStudyGrid({ caseStudies }: { caseStudies: CaseStudy[
                 <p className="text-brand-blue-500 text-sm text-left">{caseStudy['sub-title']}</p>
               </div>
             </div>
-          </div>
+          </Link>
         )
       })}
     </div>
