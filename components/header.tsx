@@ -2,9 +2,9 @@
 
 import { Bars3Icon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Logo from '@/components/logo'
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import { Button } from './ui/button'
 
 export default function Header() {
@@ -12,7 +12,6 @@ export default function Header() {
   const [lastScrollY, setLastScrollY] = useState(0)
   const [open, setOpen] = useState(false)
   const [isNavigating, setIsNavigating] = useState(false)
-  const sentinelRef = useRef(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,31 +35,6 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [lastScrollY, isNavigating])
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (isNavigating) {
-          return
-        }
-
-        if (!entry.isIntersecting && window.scrollY > lastScrollY) {
-          setIsVisible(false)
-        }
-      },
-      { threshold: 0.5 },
-    )
-
-    if (sentinelRef.current) {
-      observer.observe(sentinelRef.current)
-    }
-
-    return () => {
-      if (sentinelRef.current) {
-        observer.unobserve(sentinelRef.current)
-      }
-    }
-  }, [lastScrollY, isNavigating])
-
   const handleMobileButton = () => {
     setIsVisible(true)
     setOpen(false)
@@ -73,7 +47,6 @@ export default function Header() {
 
   return (
     <div>
-      <div ref={sentinelRef} className="h-1 absolute top-20" />
       <header
         className={`fixed h-16 top-0 left-0 right-0 bg-white border-b border-b-zinc-300 z-50 transition-transform duration-300 ease-in-out ${
           isVisible ? 'translate-y-0' : '-translate-y-full'
@@ -104,13 +77,14 @@ export default function Header() {
 
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild className="block md:hidden">
-                <Button>
+                <Button aria-label="Open navigation menu">
                   <Bars3Icon className="size-10 text-lg" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="bg-white">
                 <SheetHeader>
                   <SheetTitle className="text-brand-blue-500">GTADesign</SheetTitle>
+                  <SheetDescription className="sr-only">Site navigation</SheetDescription>
                 </SheetHeader>
 
                 <div className="flex flex-col gap-4 mt-8">

@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { getPayload } from 'payload'
 import { cache } from 'react'
 import GetInTouch from '@/components/getInTouch'
-import { Heading1, Heading2 } from '@/components/headings'
+import { Heading1, Heading2, Heading3 } from '@/components/headings'
 import { RichText } from '@/components/richText'
 import { Badge } from '@/components/ui/'
 import type { CaseStudy, Media } from '@/payload-types'
@@ -21,21 +21,34 @@ export default async function CaseStudies({ params }: { params: Promise<{ slug: 
   return (
     <div className="pt-28 w-full">
       <div className="max-w-site w-full mx-auto pb-10 px-4">
-        <div className="flex">
-          <div className="w-1/2">
-            {logo && (
-              <div className="relative aspect-auto w-[130px] h-[50px]">
+        {logo && (
+          <div className="relative aspect-auto w-[130px] h-[50px]">
+            <Image
+              src={logo.url as string}
+              alt={page.title || ''}
+              width={logo.width as number}
+              height={logo.height as number}
+              className="object-fit"
+            />
+          </div>
+        )}
+        <div className="flex flex-col lg:flex-row gap-6">
+          <div className="w-full lg:w-2/5">
+            <Heading1 className="text-brand-blue-500">{page.title}</Heading1>
+
+            {heroImage && (
+              <div className="relative my-4 aspect-auto w-full h-full lg:hidden">
                 <Image
-                  src={logo.url as string}
+                  src={heroImage.url as string}
                   alt={page.title || ''}
-                  width={logo.width as number}
-                  height={logo.height as number}
+                  width={heroImage.width as number}
+                  height={heroImage.height as number}
                   className="object-fit"
                 />
               </div>
             )}
-            <Heading1 className="text-brand-blue-500">{page.title}</Heading1>
-            <Heading2>{page['sub-title']}</Heading2>
+
+            <Heading3 className="mt-4">{page['sub-title']}</Heading3>
 
             {page.badges && page.badges.length && (
               <div className="mt-10 flex w-full gap-2">
@@ -47,9 +60,9 @@ export default async function CaseStudies({ params }: { params: Promise<{ slug: 
               </div>
             )}
           </div>
-          <div className="w-1/2">
+          <div className="hidden lg:block lg:w-3/5">
             {heroImage && (
-              <div className="relative aspect-auto w-full h-full">
+              <div className="relative aspect-auto w-full h-full mt-6">
                 <Image
                   src={heroImage.url as string}
                   alt={page.title || ''}
